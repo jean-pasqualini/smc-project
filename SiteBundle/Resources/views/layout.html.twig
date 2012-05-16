@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>layout</title>
+		<meta name="author" content="john" />
+		{% block feuilledestyles %}
+			{% stylesheets output="css/global.css" filter="cssrewrite" 
+	            "css/jquery-ui-1.8.16.custom.css"
+	            "@SmcSiteBundle/Resources/public/css/ui.jqgrid.css"
+	            "@SmcSiteBundle/Resources/public/css/jquery.jscrollpane.css"
+				"@SmcSiteBundle/Resources/public/css/blueprint/screen.css"
+				"@SmcSiteBundle/Resources/public/css/layout.css"
+				"@SmcSiteBundle/Resources/public/css/global.css"
+	            "css/colorpicker.css"
+			%}
+				<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+			{% endstylesheets %}
+
+		{% endblock %}
+		    {% block javascript %}
+	                {% 
+	                    javascripts output='js/global.js'
+	                    '@SmcSiteBundle/Resources/public/js/jquery-1.7.1.min.js'
+	                    '@SmcSiteBundle/Resources/public/js/jquery-ui-1.8.16.custom.min.js'
+	                    '@SmcSiteBundle/Resources/public/js/colorpicker.js'
+	                    '@SmcSiteBundle/Resources/public/js/jquery.jeditable.mini.js'
+	                    '@SmcSiteBundle/Resources/public/js/jquery.mousewheel.js'
+	                    '@SmcSiteBundle/Resources/public/js/jquery.jscrollpane.min.js'
+	                %}
+	                <script src="{{ asset_url }}"></script>
+	                {% endjavascripts %}
+	                {% if is_granted("ROLE_ADMIN") %}
+	                	{% 
+		                    javascripts output='js/smc.js'
+							'@SmcSiteBundle/Resources/public/js/smc.js'
+		                %}
+		                <script src="{{ asset_url }}"></script>
+		                {% endjavascripts %}                  
+	                {% endif %}
+	            {% endblock %}
+	       <script src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
+	</head> 
+	<body>
+		{% if is_granted('ROLE_ADMIN') %}
+			<div id="debug" class="conteneur-blocks container notmodulecontainer">
+					{% block debug %} 				
+						{% include "SmcSiteBundle::block.html.twig" with { "blocks" : ViewModulesSmc("debug") } %}			
+					{% endblock %}
+			</div>
+		{% endif %}
+		<div id="page" class="container">
+				<div id="header">
+					{% include "SmcSiteBundle::block.html.twig" with { "blocks" : ViewModulesSmc("header") } %}
+				
+					<div class="block-accept ui-state-highlight">
+						<img src="/images/plus.jpg"> <BR/>
+							[header]
+					</div>	
+				</div>
+				{% block middle %}
+					<div id="{{ pagename }}" actionOrdreModules="{{ path("SmcSiteBundle_changeOrdreModules", {"position" : "middle" }) }}" class="middle conteneur-blocks span-24 last container notmodulecontainer">
+						{% include "SmcSiteBundle::block.html.twig" with { "blocks" : ViewModulesSmc(pagename) } %}	
+							<div class="clear"></div>	
+							<div class="block-accept ui-state-highlight">
+									<img src="/images/plus.jpg"> <BR/>
+									[middle]
+							</div>		
+							<div class="clear"></div>	
+					</div>
+				{% endblock %}
+				<div id="footer">
+					{% include "SmcSiteBundle::block.html.twig" with { "blocks" : ViewModulesSmc("footer") } %}
+				</div>
+		</div>
+	</body>
+</html>

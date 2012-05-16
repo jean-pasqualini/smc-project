@@ -1,0 +1,11 @@
+parameters:
+#    smc_module_spip_content.example.class: Smc\Module\SpipContentBundle\Example
+
+services:
+#    smc_module_spip_content.example:
+#        class: %smc_module_spip_content.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+      smc.modules.spipcontent:
+         class: Smc\Module\SpipContentBundle\Service\SpipContent
+         arguments: [@doctrine]

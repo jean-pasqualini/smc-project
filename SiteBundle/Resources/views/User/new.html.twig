@@ -1,0 +1,21 @@
+{% extends "SmcSiteBundle::layout.html.twig" %}
+{% block middle %}
+	<fieldset class="formulaire type-page">
+		<legend>Création d'un utilisateur</legend>
+		
+		<form action="{{ path('user_create') }}" method="post" {{ form_enctype(form) }}>
+		    {{ form_widget(form) }}
+		    <p>
+		        <button type="submit">Creer l'utilisateur</button>
+		    </p>
+		</form>
+		
+		<ul class="record_actions">
+		    <li>
+		        <a href="{{ path('user') }}">
+		            Retour à la liste
+		        </a>
+		    </li>
+		</ul>
+	</fieldset>
+{% endblock %}

@@ -1,0 +1,22 @@
+					{% for module in blocks %}
+					<div id="placement_{{ module.id }}" placementId="{{ module.id }}" class="block {% if is_granted('ROLE_ADMIN') and module.editable %}inedit{% endif %} {% if module.nombrecolonne > 0 %}span-{{ module.nombrecolonne }}{% else %}span-5{% endif %} {% if not module.isfloat %}last{% endif %} {% if module.prepend > 0 %}prepend-{{ module.prepend }}{% endif %} {% if module.append > 0 %}append-{{ module.append }}{% endif %} {% if module.isMarginTop %}prepend-top{% endif %} {% if module.isMarginBottom %}append-bottom{% endif %}" module="{{ module.id }}" actionResize="{{ path("SmcSiteBundle_setNombreColonneModule", { "id" : module.id }) }}" actionMove="{{ path("SmcSiteBundle_moveModule", {"id":  module.id })  }}">
+						{% if is_granted('ROLE_ADMIN') and module.editable %}
+							<div placementId="{{ module.id }}" title="{{ module.nom }}" class="block-main-config block-config ui-corner-tr">
+								<div class="block-titre block-config" style="background-color: #{{ module.identifiantColor }};">
+									<span>{{ module.nom }} ({{ module.id }})</span>
+									<button class="block-export-window-config">Configuration</button>	
+								</div> 
+							</div>
+						{% endif %}
+						<div class="block-contents" style="background: #{{ module.color }};">
+							<div class="block-content affichage">
+								{{ module.content.main | raw }}
+							</div>
+							{% if is_granted('ROLE_ADMIN') and module.editable %}
+								<div class="block-content configuration"></div>
+							{% endif %}
+						</div>
+					</div>
+					{% else %}
+						<h1>Cette page n'a pas été trouvée n'existe pas ou n'existe plus</h1>
+					{% endfor %}

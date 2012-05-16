@@ -1,0 +1,7 @@
+parameters:
+#    smc_module_article.example.class: Smc\Module\ArticleBundle\Example
+
+services:
+    smc.modules.article:
+        class: Smc\Module\ArticleBundle\Service\Article
+        arguments: [@doctrine]

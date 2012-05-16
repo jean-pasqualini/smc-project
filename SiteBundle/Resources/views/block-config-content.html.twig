@@ -1,0 +1,88 @@
+<div placementId="{{ module.id }}" class="block-config-content block-config ui-widget-header">
+										<div class="button" action="{{ path("SmcSiteBundle_setPrepend", {"id": module.id } ) }}">
+											<ul style="top: 1px">
+												{% for i in 0..23 %}
+													<li> <a href="#" colonne="{{ i }}">{{ i }} Colonne(s)</a> </li>
+												{% endfor %}
+											</ul>
+										</div>
+										
+										<div class="button" class="block-personalise-design">
+											Personaliser
+											<div class="popup">
+												<p>
+													<label> Police : </label>
+													<input type="text" name="fontFamilly" />
+												</p>
+												<p>
+													<label> Type : </label>
+													<input type="text" name="weight">
+												</p>
+												<p>
+													<label> Taille : </label>
+													<input type="text" name="fontSize" />
+												</p>
+												<p>
+													<label> Arrondi : </label>
+													<input type="text" name="corner"
+												</p>
+												<p>
+													<label> Fond couleur : </label>
+													<input type="text" name="backgroundColor">
+												</p>
+												<p>
+													<label> Fond image : </label>
+													<input type="text" name="backgroundImage">
+												</p>
+												<p>
+													<label> Taille bordure : </label>
+													<input type="texte" name="borderSize">
+												</p>
+												<p>
+													<label> Type bordure : </label>
+													<input type="text" name="borderType">
+												</p>
+												<p>
+													<label> Couleur bordure : </label>
+													<input type="text" name="borderColor">
+												</p>
+												<p>
+													<label> Couleur texte : </label>
+													<input type="text" name="fontColor">
+												</p>
+												
+											</div>
+										</div>
+										<!--
+										<div class="button-margin" style="display: inline-block">
+											<input {% if module.isMarginTop %}checked="checked"{% endif %} href="{{ path("SmcSiteBundle_setMarginTop", {"id": module.id}) }}" type="checkbox" class="button margin top" id="button-margin-top-{{ module.id }}" name="button-margin-top-{{ module.id }}" /><label for="button-margin-top-{{ module.id }}">Espace au dessus du bloc</label>
+											<input {% if not module.isMarginBottom %}checked="checked"{% endif %} href="{{ path("SmcSiteBundle_setMarginBottom", {"id": module.id}) }}" type="checkbox" class="button margin bottom" id="button-margin-bottom-{{ module.id }}" name="button-margin-bottom-{{ module.id }}" checked="checked" /><label for="button-margin-bottom-{{ module.id }}">Espace en dessous du bloc</label>
+										</div>
+										<div class="button-float" style="display: inline-block">
+											<input {% if module.isfloat %}checked="checked"{% endif %} href="{{ path("SmcSiteBundle_setFloat", {"id": module.id}) }}" type="radio" class="button float on" id="button-float-yes-{{ module.id }}" name="radio" /><label for="button-float-yes-{{ module.id }}">Cote a cote</label>
+											<input {% if not module.isfloat %}checked="checked"{% endif %} href="{{ path("SmcSiteBundle_setFloat", {"id": module.id}) }}" type="radio" class="button float off"id="button-float-no-{{ module.id }}" name="radio" checked="checked" /><label for="button-float-no-{{ module.id }}">En dessous</label>
+										</div>
+										-->
+										
+										<div class="button color" action="{{ path("SmcSiteBundle_changeColor", {"id": module.id }) }}">Couleur</div>
+
+										<div class="button append" action="{{ path("SmcSiteBundle_setAppend", {"id": module.id } ) }}">
+											Collone precedent le block
+											<ul>
+												{% for i in 0..23 %}
+													<li> <a href="#" colonne="{{ i }}">{{ i }} Colonne(s)</a> </li>
+												{% endfor %}
+											</ul>
+										</div>
+										
+										<div class="button" class="config">
+										Configuration
+											<ul>
+												<li><a href="{{ path("SmcSiteBundle_configurer", {"id" : module.id }) }}" class="action configurer">Configurer ce module</a></li>
+												<li><a href="{{ path("SmcSiteBundle_removeModule", {"id":  module.id })  }}" class="action delete">Supprimer ce module</a></li>
+												<li><a href="#">A propos de ce module</a></li>
+											</ul>
+										</div>
+
+					<div style="clear: both"></div>
+			</div>

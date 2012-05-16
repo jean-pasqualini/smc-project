@@ -1,0 +1,7 @@
+{% extends "SmcSiteBundle::layout.html.twig" %}
+
+{% block middle %}
+	<div id="offrefinale" class="conteneur-blocks span-24 last container notmodulecontainer">
+		{% include "SmcSiteBundle::block.html.twig" with { "blocks" : ViewModulesSmc("offrefinale") } %}	
+	</div>
+{% endblock %}

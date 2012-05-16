@@ -1,0 +1,7 @@
+parameters:
+#    smc_module_menu.example.class: Smc\Module\MenuBundle\Example
+
+services:
+    smc.modules.menu:
+        class: Smc\Module\MenuBundle\Service\Menu
+        arguments: [@doctrine]

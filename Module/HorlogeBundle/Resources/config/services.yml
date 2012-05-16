@@ -1,0 +1,10 @@
+parameters:
+#    smc_module_horloge.example.class: Smc\Module\HorlogeBundle\Example
+
+services:
+#    smc_module_horloge.example:
+#        class: %smc_module_horloge.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+     smc.modules.horloge:
+         class: Smc\Module\HorlogeBundle\Service\Horloge
+#        arguments: []

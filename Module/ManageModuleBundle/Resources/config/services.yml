@@ -1,0 +1,7 @@
+parameters:
+#    smc_module_manage_module.example.class: Smc\Module\ManageModuleBundle\Example
+
+services:
+    smc.modules.managemodule:
+        class: Smc\Module\ManageModuleBundle\Service\ManageModule
+        arguments: [@doctrine,@service_container]

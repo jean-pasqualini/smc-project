@@ -1,0 +1,78 @@
+SmcModuleArticleBundle_crud:
+    resource: "routing/user.yml"
+    prefix:   /smc/crud/user/
+    
+SmcSiteBundle_sousoffre:
+    pattern: /sousoffre
+    defaults: { _controller:SmcSiteBundle:Default:sousoffre }
+
+SmcSiteBundle_offrefinale:
+    pattern: /offrefinale
+    defaults: { _controller:SmcSiteBundle:Default:offrefinale }
+
+SmcSiteBundle_moveModule:
+    pattern: /moveModule/{id}
+    defaults: { _controller: SmcSiteBundle:Default:moveModule }
+
+SmcSiteBundle_changeOrdreModules:
+    pattern: /changeOrdreModules/{position}
+    defaults: { _controller: SmcSiteBundle:Default:changeOrdreModule }
+
+SmcSiteBundle_updateSystem:
+    pattern: /updateSystem/
+    defaults: { _controller: SmcSiteBundle:Default:updateSystem }
+
+SmcSiteBundle_addModule:
+    pattern: /addModule/{module_id}
+    defaults: { _controller: SmcSiteBundle:Default:addModule }
+    
+SmcSiteBundle_removeModule:
+    pattern: /removeModule/{id}
+    defaults: { _controller: SmcSiteBundle:Default:removeModule }
+    
+SmcSiteBundle_setNombreColonneModule:
+    pattern: /resizeModule/{id}
+    defaults: { _controller: SmcSiteBundle:Default:setNombreColonneModule }
+
+SmcSiteBundle_changeColor:
+    pattern: /changeColorModule/{id}
+    defaults: { _controller: SmcSiteBundle:Default:changeColorModule }
+    
+SmcSiteBundle_setFloat:
+    pattern: /setFloat/{id}
+    defaults: { _controller: SmcSiteBundle:Default:setFloatModule }
+    
+SmcSiteBundle_setPrepend:
+    pattern: /setPrepend/{id}
+    defaults: { _controller: SmcSiteBundle:Default:setPrepend }
+    
+SmcSiteBundle_setAppend:
+    pattern: /setAppend/{id}
+    defaults: { _controller: SmcSiteBundle:Default:setAppend }
+    
+SmcSiteBundle_setMarginTop:
+    pattern: /setMarginTop/{id}
+    defaults: { _controller: SmcSiteBundle:Default:setMarginTopModule }
+
+SmcSiteBundle_setMarginBottom:
+    pattern: /setMarginBottom/{id}
+    defaults: { _controller: SmcSiteBundle:Default:setMarginBottomModule }
+    
+login:
+    pattern:   /login
+    defaults:  { _controller: SmcSiteBundle:Default:login }
+    
+login_check:
+    pattern:   /login_check
+    
+SmcSiteBundle_testservice:
+    pattern: /testservice
+    defaults: { _controller:SmcSiteBundle:Default:testService }
+    
+SmcSiteBundle_homepage:
+    pattern:  /{page}
+    defaults: { _controller:SmcSiteBundle:Default:index, page: home }
+    
+SmcSiteBundle_configurer:
+    pattern: /configurer/{id}
+    defaults: { _controller: SmcSiteBundle:Default:configurer }

@@ -1,0 +1,11 @@
+SmcModuleMenuBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SmcModuleMenuBundle:Default:index }
+
+SmcModuleMenuBundle_editTitleItem:
+    pattern:  /moduleMenu/editTitleItem/{id}
+    defaults: { _controller: SmcModuleMenuBundle:Default:editTitleItem }
+    
+SmcModuleMenuBundle_addItem:
+    pattern: /moduleMenu/addItem/{id}/{parent}
+    defaults: { _controller: SmcModuleMenuBundle:Default:addItem }

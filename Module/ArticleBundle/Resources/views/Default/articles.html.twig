@@ -1,0 +1,19 @@
+{% if module is defined %}
+	<link rel="stylesheet" href="{{ path("SmcModuleArticleBundle_css", { "id" : module.getId() }) }}" type="text/css" media="screen" />
+{% endif %}
+<div class="article-list" {% if module is defined %} id="article-list-{{ module.getId() }}" {% endif %}>
+{% for article in articles %}
+	<div class="article">
+		<h3 class="article-titre edit">{{ article.titre }}</h3>
+		<div class="article-contenu edit_area">contenu : {{ article.contenu | raw }}</div>
+	</div>
+{% else %}
+	Il n'y a aucun article sur cette page
+{% endfor %}
+	<div class="article">
+		<div class="article-contenu">
+			<img src="/images/plus.jpg"> <BR/>
+			 [Ajouter un article]
+		</div>
+	</div>
+</div>

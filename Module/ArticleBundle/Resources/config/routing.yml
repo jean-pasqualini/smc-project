@@ -1,0 +1,13 @@
+SmcModuleArticleBundle_crud:
+    resource: "routing/articles.yml"
+    prefix:   /articles/crud/
+    
+SmcModuleArticleBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SmcModuleArticleBundle:Default:index }
+
+SmcModuleArticleBundle_css:
+    pattern: /articles/css/design/{id}
+    defaults: { _controller: SmcModuleArticleBundle:Default:getCss }
+
+

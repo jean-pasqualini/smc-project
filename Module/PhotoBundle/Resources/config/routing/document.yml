@@ -1,0 +1,30 @@
+document:
+    pattern:  /
+    defaults: { _controller: "SmcModulePhotoBundle:Document:index" }
+
+document_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SmcModulePhotoBundle:Document:show" }
+
+document_new:
+    pattern:  /new
+    defaults: { _controller: "SmcModulePhotoBundle:Document:new" }
+
+document_create:
+    pattern:  /create
+    defaults: { _controller: "SmcModulePhotoBundle:Document:create" }
+    requirements: { _method: post }
+
+document_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SmcModulePhotoBundle:Document:edit" }
+
+document_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SmcModulePhotoBundle:Document:update" }
+    requirements: { _method: post }
+
+document_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SmcModulePhotoBundle:Document:delete" }
+    requirements: { _method: post }

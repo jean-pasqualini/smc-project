@@ -1,0 +1,15 @@
+			{% stylesheets output="ContainerModuleBundle.css" filter="cssrewrite" 
+				"@SmcModuleContainerModuleBundle/Resources/public/css/ContainerModuleBundle.css"
+			%}
+				<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+			{% endstylesheets %}
+			
+<div id="{{ name }}" actionOrdreModules="{{ path("SmcSiteBundle_changeOrdreModules", {"position" : name }) }}" class="conteneur-blocks module-container {% if is_granted('ROLE_ADMIN') %}inedit{% endif %}">			
+		{% include "SmcSiteBundle::block.html.twig" with { "blocks" : ViewModulesSmc( name ) } %}
+		<div class="clear"></div>	
+		<div class="block-accept ui-state-highlight">
+				<img src="/images/plus.jpg"> <BR/>
+				[{{ name }}]
+        </div>		
+		<div class="clear"></div>		
+</div>

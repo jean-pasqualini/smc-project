@@ -1,0 +1,50 @@
+{% if nombreinstance < 2 %}
+	{% 
+		javascripts output='js/SmcModuleMenuBundle.js'
+		'@SmcModuleMenuBundle/Resources/public/js/SmcModuleMenuBundle.js'
+	%}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endif %}
+<ul class="menu">
+	<li class="parent">
+		<a href="#">MINI-CLOUD</a>
+		<div class="submenu">
+			<div class="categorie">
+				<h3 class="categorie-titre"> 
+					<img src="/images/image_menu_categorie/cloud_messagerie.jpg">
+					<span>Cloud de Messagerie</span>
+					</h3>
+			</div>
+			<div class="categorie">
+				<h3 class="categorie-titre">
+					<img src="/images/image_menu_categorie/datacloud.jpg"/>
+					<span>Cloud de Données</span>
+				</h3>
+				<ul class="categorie-contenu">
+					<li> Sauvegarde et Restauration de serveur et de postes </li>
+					<li> Archivage et Stockages de données </li>
+				</ul>
+			</div>
+			<div class="categorie">
+				<h3 class="categorie-titre">
+					<img src="/images/image_menu_categorie/appcloud.jpg"/>				
+					<span>Cloud d'Application</span>
+				</h3>
+			</div>
+		</div>
+	</li>
+	<li class="parent"><a href="#">ARCHITECTURE</a></li>
+	<li class="parent"><a href="#">MAINTENANCE</a></li>
+	<li class="parent"><a href="#">SUPPORT</a></li>
+	<li class="parent"><a href="#">LE GROUPE</a></li>
+	{% for item in items %}
+		<li id="item_{{ loop.index }}" class="parent inedit">
+			<a actionEdit="{{ path("SmcModuleMenuBundle_editTitleItem", { "id" : item.id }) }}" href="{{ item.lien }}">{{ item.nom }}</a>
+		</li>
+	{% endfor %}
+	{% if is_granted("ROLE_ADMIN") and module is defined %}
+		<li class="parent add-item-menu" actionAdd="{{ path("SmcModuleMenuBundle_addItem", {"id" : module.id, "parent" : "null" }) }}"><a href="#">+ | Ajouter</a></li>
+	{% endif %}
+</ul>
+<div class="clear"></div>

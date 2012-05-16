@@ -1,0 +1,7 @@
+div.module-container.conteneur-blocks {
+	/* overflow: hidden; */
+}
+
+div.module-container.conteneur-blocks.inedit {
+	min-height: 100px; 
+}

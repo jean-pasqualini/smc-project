@@ -1,0 +1,27 @@
+
+	                {% 
+	                    javascripts output='js/SmcModuleArticleBundleConfiguration.js'
+	                    '@SmcModuleArticleBundle/Resources/public/js/SmcModuleArticleBundle.js'
+	                %}
+	                <script src="{{ asset_url }}"></script>
+	                {% endjavascripts %}
+<fieldset class="formulaire articles">
+	<legend>Configuration</legend>
+	<form action="{{ path("SmcSiteBundle_configurer", { "id": module.getId() }) }}" method="post">
+		<p>
+			{{ form_errors(form) }}
+		</p>
+		<p>
+			{{ form_label(form.TitleBackgroundColor, "Couleur de fond des titres") }}
+			{{ form_errors(form.TitleBackgroundColor) }}
+			{{ form_widget(form.TitleBackgroundColor, {"attr" : {"class" : "color TitleBackgroundColor"}}) }}
+		</p>
+		<p>
+			{{ form_label(form.TitlesTextColor, "Couleur du texte des titres") }}
+			{{ form_errors(form.TitlesTextColor) }}
+			{{ form_widget(form.TitlesTextColor, {"attr" : {"class" : "color TitlesTextColor"}}) }}
+		</p>
+		{{ form_widget(form) }}
+		<p><input type="submit" value="Sauvegarder" /></p>
+	</form>
+</fieldset>

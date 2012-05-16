@@ -1,0 +1,13 @@
+parameters:
+#    smc_site.example.class: Smc\SiteBundle\Example
+
+services:
+    twig.extension.smc:
+        class: Smc\SiteBundle\Twig\Extension\SmcExtension
+        arguments:
+          entityManager: "@doctrine"
+          httpkernel: "@http_kernel"
+          formFactory: "@form.factory"
+          container: "@service_container"
+        tags:
+          -  { name: twig.extension }

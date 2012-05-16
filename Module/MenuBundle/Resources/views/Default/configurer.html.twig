@@ -1,0 +1,13 @@
+<fieldset class="formulaire moduleMenus">
+	<legend> Configuration du menu </legend>
+	
+	<form action="{{ path("SmcSiteBundle_configurer", { "id": module.getId() }) }}" method="post">
+		{{ form_widget(form) }}
+		
+		<p>
+			<input type="submit" value="Sauvegarder">
+		</p>
+	</form>
+
+
+</fieldset>

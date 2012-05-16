@@ -1,0 +1,7 @@
+parameters:
+#    smc_module_barre_partenaire.example.class: Smc\Module\BarrePartenaireBundle\Example
+
+services:
+    smc.modules.barrepartenaire:
+        class: Smc\Module\BarrePartenaireBundle\Service\BarrePartenaire
+        arguments: []

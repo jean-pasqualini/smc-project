@@ -1,0 +1,30 @@
+user:
+    pattern:  /
+    defaults: { _controller: "SmcSiteBundle:User:index" }
+
+user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SmcSiteBundle:User:show" }
+
+user_new:
+    pattern:  /new
+    defaults: { _controller: "SmcSiteBundle:User:new" }
+
+user_create:
+    pattern:  /create
+    defaults: { _controller: "SmcSiteBundle:User:create" }
+    requirements: { _method: post }
+
+user_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SmcSiteBundle:User:edit" }
+
+user_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SmcSiteBundle:User:update" }
+    requirements: { _method: post }
+
+user_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SmcSiteBundle:User:delete" }
+    requirements: { _method: post }

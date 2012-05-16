@@ -1,0 +1,27 @@
+{% extends "SmcSiteBundle::layout.html.twig" %}
+{% block middle %}
+	<fieldset class="formulaire type-page">
+		<legend>Edition de l'utilisateur</legend>
+	
+		<form action="{{ path('user_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+		    {{ form_widget(edit_form) }}
+		    <p>
+		        <button type="submit">Editer</button>
+		    </p>
+		</form>
+		
+		<ul class="record_actions">
+		    <li>
+		        <a href="{{ path('user') }}">
+		            Retourner à la liste
+		        </a>
+		    </li>
+		    <li>
+		        <form action="{{ path('user_delete', { 'id': entity.id }) }}" method="post">
+		            {{ form_widget(delete_form) }}
+		            <button type="submit">Supprimer</button>
+		        </form>
+		    </li>
+		</ul>
+	</fieldset>
+{% endblock %}

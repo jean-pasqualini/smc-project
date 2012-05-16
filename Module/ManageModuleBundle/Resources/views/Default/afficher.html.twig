@@ -1,0 +1,46 @@
+<div id="voile"></div>
+<div id="manage-modules-conteneur" class="ui-widget-content">
+	<div class="show-hide ui-corner-br">Panel</div>
+	<h3 class="title ui-corner-top"> Liste des modules </h3>
+	<div id="manage-modules" title="Liste des modules">
+		<div id="panel-left">
+				<ul class="ui-corner-bottom">
+					{% for module in modules %}
+						<li id="module-{{ module.nom }}" actionMove="{{ path("SmcSiteBundle_addModule", {"module_id":  module.id })  }}" class="module-type" show="#module-{{ module.nom }}"> {% if module.isservice %}(S){% endif %} {{ module.nom }} </li>
+					{% endfor %}
+				</ul>
+		</div>
+		<div class="module-list span-11 last">
+			<ul class="module-list">
+			{% for module in modules %}
+				<li class="block add" id="module-{{ module.nom }}" actionMove="{{ path("SmcSiteBundle_addModule", {"module_id":  module.id })  }}">
+					<h3 class="block-title">
+						{{ module.nom }}
+					</h3>
+					<div class="block-content"> 
+						{{ module.content | raw }}
+					</div>
+				</li>
+			{% else %}
+				Aucun module
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<h3 class="title ui-corner-top"> Configuration des  modules </h3>
+	<div id="search-toolbar-modules"> <input type="text"> </div>
+	<div id="toolbar-modules" title="Barre d'outils des modules">
+		{% for placement in placements %}
+				<h3 class="toolbar-module" index="{{ loop.index }}" placementId="{{ placement.getId() }}" style="background-color: #{{ placement.getIdentifiantColor() }};"><a href="#"><span>{{ SmcGetModuleFromPlacement(placement).getNom() }} ({{ placement.getId() }})</span></a></h3>
+				<div class="toolbar-module">
+					{% include "SmcSiteBundle::block-config-content.html.twig" with {"module" : placement} %}
+				</div>
+		{% else %}
+			Aucun module
+		{% endfor %}
+	</div>
+	<h3 class="title ui-corner-top"> Corbeille </h3>
+	<div id="corbeille-modules">
+		<img src="/images/corbeille.png">
+	</div>
+</div>

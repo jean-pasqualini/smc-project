@@ -1,0 +1,7 @@
+parameters:
+#    smc_module_slideshow.example.class: Smc\Module\SlideshowBundle\Example
+
+services:
+    smc.modules.slideshow:
+        class: Smc\Module\SlideshowBundle\Service\Slideshow
+        arguments: []

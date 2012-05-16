@@ -1,0 +1,15 @@
+	{% if nombre_instance<2 and is_granted('ROLE_ADMIN') %}
+		{% 
+			javascripts output='js/SmcModulePhotoBundle.js'
+			'@SmcModulePhotoBundle/Resources/public/js/SmcModulePhotoBundleConfiguration.js'
+		%}
+			<script src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+	{% endif %}
+<fieldset class="formulaire modulePhoto">
+	<legend>Configurer la photo</legend>
+	<form action="{{ path("SmcModulePhotoBundle_configurer", { "id" : module.id }) }}" method="post" {{ form_enctype(form) }}>
+		{{ form_widget(form) }}
+		<p><input type="submit" value="Sauvegarder"/></p>
+	</form>
+</fieldset>

@@ -1,0 +1,20 @@
+SmcModulePhotoBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SmcModulePhotoBundle:Default:index }
+
+
+SmcModulePhotoBundle_resizePhoto:
+   pattern: /modulePhoto/resizePhoto/{id}
+   defaults: { _controller: SmcModulePhotoBundle:Default:resizePhoto }
+
+SmcModulePhotoBundle_configurer:
+    pattern: /modulePhoto/configurer/{id}
+    defaults: { _controller: SmcModulePhotoBundle:Default:configurer }
+    
+SmcModulePhotoBundle_Documents:
+    resource: "routing/document.yml"
+    prefix:   /modulePhoto/document/crud
+    
+SmcModulePhotoBundle_changePhoto:
+    pattern: /modulePhoto/changePhoto/{id}
+    defaults: { _controller: SmcModulePhotoBundle:Default:changePhoto }

@@ -1,0 +1,7 @@
+parameters:
+#    smc_module_photo.example.class: Smc\Module\PhotoBundle\Example
+
+services:
+    smc.modules.photo:
+        class: Smc\Module\PhotoBundle\Service\Photo
+        arguments: [@doctrine, @service_container]

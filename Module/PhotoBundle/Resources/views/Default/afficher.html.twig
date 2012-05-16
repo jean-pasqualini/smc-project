@@ -1,0 +1,21 @@
+{% if nombre_instance<2 and is_granted('ROLE_ADMIN') %}
+	{% stylesheets output="css/ModulePhoto.css" filter="cssrewrite" 
+		"@SmcModulePhotoBundle/Resources/public/css/ModulePhoto.css"
+	%}
+		<link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+	{% endstylesheets %}
+
+	{% 
+		javascripts output='js/SmcModulePhotoBundle.js'
+		'@SmcModulePhotoBundle/Resources/public/js/droparea.js'
+		'@SmcModulePhotoBundle/Resources/public/js/SmcModulePhotoBundle.js'
+	%}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endif %}
+<div class="modulePhoto">
+	{% if is_granted("ROLE_ADMIN") %} 
+		<input type="file" class="imagefile" name="imagefile" data-width="200" data-height="200" data-crop="200" data-post="{{ path("SmcModulePhotoBundle_changePhoto", { "id": module.id }) }}">
+	{% endif %}
+	<img src="/{{ image_url }}" width="{{ largeur }}" height="{{ hauteur }}" actionResize="{{ path("SmcModulePhotoBundle_resizePhoto", { "id": module.id }) }}">
+</div>

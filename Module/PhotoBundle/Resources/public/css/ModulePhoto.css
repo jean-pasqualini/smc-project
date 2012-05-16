@@ -1,0 +1,30 @@
+
+div.block.inedit div.modulePhoto {
+	position: relative;
+}
+
+div.block.inedit div.modulePhoto input {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 3;
+	opacity: 0;
+	display: block;
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+div.block.inedit div.modulePhoto div.imagefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 3;
+	background: url("/images/voile.png");
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}

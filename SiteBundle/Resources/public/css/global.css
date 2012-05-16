@@ -1,0 +1,444 @@
+a {
+    text-decoration: none;
+}
+
+a:link:after, a:visited:after {
+content: none;
+}
+
+/* Reset style */
+html, body, div, h1, h2, h3, h4, h5, h6, p, pre, abbr, acronym, blockquote, img, dl, dt, dd, ol, ul, li, table, caption, tbody, tfoot, thead, tr, th, td, form, fieldset, embed, object, applet {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+html,body {
+    margin: 0px;
+	font-family: "Arial", "Helvetica", "Verdana", "sans-serif";
+}
+
+
+.scrshot {
+  float:left;
+  border:1px solid #ccc;
+  margin:0;
+  width:100px;
+  height:80px;
+  -moz-box-shadow:0 2px 4px #e9e9e9;
+  -webkit-box-shadow:0 2px 4px #e9e9e9;
+}
+
+.float {
+    overflow: hidden;
+}
+
+.full-size {
+    width: 100%;
+}
+
+.two-column {
+    width: 50%;
+}
+
+.four-column {
+    width: 25%;
+}
+
+.three-column {
+    width: 33%;
+}
+
+.float .left {
+    float: left;
+}
+
+.float .right
+{
+    float: right;
+}
+
+/* Formulaire design */
+
+form p{
+	margin-bottom:20px;
+}
+form p:last-child{ /* Sélecteur avancé pour sélectionner le dernier paragraphe du formulaire */
+	margin-bottom:0;
+}
+label{
+	cursor:pointer;
+	font-size:13px;
+	font-weight:bold;
+	line-height:28px;
+	margin-bottom:5px;
+	width:120px;
+        display: block;
+}
+
+form.inline label , label.inline , p.inline label {
+    float: left;
+    text-align: right;
+    padding-right: 5px;
+    width: 180px;
+}
+
+form.inline input , p.inline input , p.inline select {
+    float: left;
+    text-align: left;
+    padding-right: 5px;
+}
+
+p.inline select { padding: 0px; }
+
+form.inline p , p.inline {
+    overflow: hidden;
+}
+
+form p:hover label{
+	color:#0459b7;
+}
+
+form p:hover label:after{
+	content:" »";
+}
+
+input[type=text],
+input[type=password]{
+	background: rgba(255, 255, 255, 0.9);
+	background:-moz-linear-gradient(90deg, #fff, #eee); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff)); /* Webkit */
+	border:1px solid #aaa;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	padding:5px;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+	border-color:#093c75;
+	outline:none; /* Pour enlever le contour jaune lorsque l'on sélectionne un input dans Chrome */
+}
+
+input[type=submit],
+a.submit{
+	background:orange;
+	background:-moz-linear-gradient(90deg, #0459b7, #08adff); /* Firefox */
+	background:-webkit-gradient(linear, left top, left bottom, from(#08adff), to(#0459b7)); /* Webkit */
+	border:1px solid #093c75;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-box-shadow:0 1px 0 #fff;
+	-webkit-box-shadow:0 1px 0 #fff;
+	color:#fff;
+	cursor:pointer;
+	font-family:Arial,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	margin-left:120px;
+	padding:5px 10px;
+	text-decoration:none;
+	text-shadow:0 1px 1px #333;
+	text-transform:uppercase;
+}
+
+input[type=submit]:hover,
+a.submit:hover{
+	background:#eee;
+	background:-moz-linear-gradient(90deg, #067cd3, #0bcdff);
+	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+	border-color:#093c75;
+	text-decoration:none;
+}
+input[type=submit]:active,
+input[type=submit]:focus,
+a.submit:active,
+a.submit:focus{
+	background:#ccc;
+	background:-moz-linear-gradient(90deg, #0bcdff, #067cd3);
+	background:-webkit-gradient(linear, left top, left bottom, from(#067cd3), to(#0bcdff));
+	border-color:#093c75;
+	outline:none;
+}
+
+
+
+input.vanadium-invalid , textarea.vanadium-invalid {
+    border: solid red 2px;
+}
+
+span.vanadium-invalid {
+    background: red;
+    border: solid white 2px;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+input.vanadium-valid , textarea.vanadium-valid {
+    border: solid green 2px;
+}
+
+/* Formulaire mise en forme */
+
+form p {
+    padding: 5px;
+    text-align: left;
+    width: 85%;
+    margin: auto;
+}
+
+fieldset.formulaire {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+    border: none;
+    border-top: solid orange 2px;
+}
+
+fieldset.formulaire.type-page {
+    width: 75%;
+}
+
+fieldset.formulaire.type-page form p label {
+    width: 400px;
+}
+
+fieldset.formulaire.type-page form p.inline label {
+    width: 200px;
+}
+
+fieldset.formulaire form {
+    padding: 5px;
+}
+
+fieldset.formulaire legend {
+    padding-right: 20px;
+}
+
+div#header-content , div#middle-content , div#footer-content {
+    width: 900px;
+    margin: auto;
+}
+
+div#middle-content {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+form.inlineedit {
+    
+}
+
+fieldset.formulaire div.ui-state-error {
+    padding: 5px;
+}
+
+form.inlineedit input[type=text]
+{
+    border: none;
+    background: transparent;
+}
+
+div#header , div#footer {
+    min-height: 40px;
+    padding-top: 5px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background: #2C2D29;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+div#header {
+    border-bottom: solid black 5px;
+}
+
+div#footer {
+    border-top: solid black 5px;
+}
+
+div#header nav {
+    position: relative;
+    float: right;
+    width: 600px;
+    padding-left: 14px;
+    margin: 0px;
+}
+
+div#header h1#logo {
+    display: block;
+    width: 217px;
+    padding: 13px 0 0 33px;
+}
+
+nav menu li {
+    float: left;
+}
+
+nav menu li {
+    margin-right: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+nav menu li a {
+    padding: 5px;
+    display: block;
+}
+
+nav menu {
+    overflow: hidden;
+    list-style: none;
+    margin-bottom: 0px;
+}
+
+/* --- Feature list --- */
+    ul.feature-list li {
+    list-style-type: none;
+    clear: left;
+    float: left;
+    width: 100%;
+    padding: 1.2em 0 0 0;
+    margin: 0.7em 0;
+    border-top: 1px dashed #DDD;
+    }
+    
+    ul.feature-list li p, ul.feature-list li h3 {
+	margin: 0 0 0.2em 118px;
+	color: black;
+    }
+    
+    ul.feature-list li p {
+    line-height: 1.3em;
+    }
+    
+    ul.feature-list {
+    float: left;
+    clear: right;
+    padding: 0;
+    padding-right: 5px;
+    }
+
+ul li.feature-heading {
+border: 0;
+}
+
+/* Mise en forme tableau flexigrid */
+
+div.flexigrid, div.ui-jqgrid {
+    margin: auto;
+}
+
+div.ui-state-error, div.ui-state-highlight p {
+    padding: 2px;
+    margin: 2px;
+}
+
+/* Formation des erreurs et succès */
+div.ui-state-error, div.ui-state-highlight {
+    padding: 2px;
+}
+div.ui-state-error ul li, div.ui-state-highlight ul li {
+    padding: 2px;
+}
+
+div.ui-state-error ul, div.ui-state-highlight ul {
+    margin-left: 40px;
+}
+
+/* Styling du debug zeroframework */
+div.zeroframework.debug div.ui-tabs-panel {
+    height: 250px;
+    overflow: auto;
+    width: 95%;
+    display: none;
+}
+
+div.zeroframework.debug div#zeroframework-details-fonctions ul {
+    padding-left: 40px;
+}
+
+div.zeroframework.debug {
+    width: 94%;
+    margin-left: 2%;
+    margin-right: 2%;
+    position: fixed;
+    bottom: 0px;
+}
+
+div.zeroframework.debug h3.title {
+    text-align: center;
+}
+
+div#zeroexception a {
+    color: black;
+    text-decoration: underline;
+}
+
+div#zeroframework-save a {
+    text-decoration: underline;
+}
+
+div#zeroframework-fastinfo {
+    background: #FC6;
+    border: solid white 5px;
+    border-right: none;
+    border-top: none;
+    font-weight: bold;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 35px;
+    width: 250px;
+    color: black;
+    text-shadow: 0.1em 0.1em 0.2em white;
+    text-align: center;
+    padding-top: 15px;
+    display: none;
+    z-index: 2;
+}
+
+ul.feature-list li a {
+    color: black;
+    padding: 2px;
+}
+
+ul.feature-list li a:hover {
+    background: red;
+    color: white;
+}
+
+ul.feature-list li p {
+
+}
+
+/* --- Tableaux --- */
+
+table.styled {
+    border: solid gray 2px;
+    background: white;
+}
+
+table.styled tr th {
+    background: gray;
+    font-weight: bold;
+    color: white;
+}
+
+table.styled tr th, table tr td {
+   padding: 5px;
+   text-align: center;
+}
+
+table.styled tr:hover {
+    background: gray;
+    color: white;
+}
+
+table.styled tr:hover a {
+    color: white;
+}
